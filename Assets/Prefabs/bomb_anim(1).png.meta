@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bd43c8f1e310a674693a9cabb9bc4fbb
+guid: 9be994adbfa2bb74cb2783fbf848f35b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,7 +139,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bomb_anim(1)_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1716
+        width: 208
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13776d93271e1b84d85541e53c20c88c
+      internalID: 768561973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb_anim(1)_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1504
+        width: 213
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efa3537d0a380147bb68e3f087392e3
+      internalID: 1096672304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +192,36 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bomb_anim(1)_7: -606285759
+      bomb_anim(1)_20: 670437288
+      bomb_anim(1)_3: -2124728289
+      bomb_anim(1)_1: -1616814290
+      bomb_anim(1)_8: 432829695
+      bomb_anim(1)_22: -78167801
+      bomb_anim(1)_6: 1096672304
+      bomb_anim(1)_27: -901194752
+      bomb_anim(1)_25: -969683456
+      bomb_anim(1)_17: 2106211626
+      bomb_anim(1)_19: -1504360008
+      bomb_anim(1)_12: -1866107129
+      bomb_anim(1)_28: 1220800921
+      bomb_anim(1)_11: -1412455273
+      bomb_anim(1)_0: 768561973
+      bomb_anim(1)_26: -1776424011
+      bomb_anim(1)_9: -1871641694
+      bomb_anim(1)_24: -1280275029
+      bomb_anim(1)_23: 105799083
+      bomb_anim(1)_2: -1072256175
+      bomb_anim(1)_4: 778585890
+      bomb_anim(1)_13: 1442419715
+      bomb_anim(1)_21: 1608930573
+      bomb_anim(1)_5: 566998819
+      bomb_anim(1)_10: -297577157
+      bomb_anim(1)_14: -1726584092
+      bomb_anim(1)_15: -422959056
+      bomb_anim(1)_16: 2001611196
+      bomb_anim(1)_18: -1364245630
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

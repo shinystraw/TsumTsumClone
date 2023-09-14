@@ -41,7 +41,7 @@ ExportedObj/
 *.userprefs
 *.pidb
 *.booproj
-*.svd
+*.svdgit 
 *.pdb
 *.mdb
 *.opendb
@@ -98,3 +98,4 @@ $RECYCLE.BIN/
 
 #Viime projektin syntipunkki
 [Aa]ssets/TextMesh Pro/Examples & Extras/
+[Aa]ssets/AllIn1VfxToolkit
