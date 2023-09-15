@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class GameLogic : MonoBehaviour
 {
@@ -13,22 +14,34 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private int currentGemID;
     [SerializeField] private int spawncount;
     [SerializeField] private int score;
+    [SerializeField] private int bombSummonRequirment;
+    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] Timer timer;
+    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] TextMeshProUGUI gameOverScoreText;
 
     bool firstGemToTouch; //enables gem matching via dragging.  
     private Touch touch;
     Vector2 startPos;
     Vector2 draggingPos;
     Vector2 currentGemPosition;
+    bool end;
 
     // Start is called before the first frame update
     void Start()
     {
+        scoreText.text = "0";
         spawner.GenerateGems(spawncount);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (timer.GetLimitReached() && !end)
+        {
+            EndGame();
+        }
+
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -120,13 +133,14 @@ public class GameLogic : MonoBehaviour
         //if over 3 matches clear the gems add score and spawn new gems instead.
         if(gemsToRemove.Count >= 3)
         {
+            AddScore(100 * gemsToRemove.Count);
             spawncount = gemsToRemove.Count;
             for (int i = 0; i < gemsToRemove.Count; i++)
             {
                 Destroy(gemsToRemove[i].gameObject);
             }
 
-            if(gemsToRemove.Count >= 7)
+            if(gemsToRemove.Count >= bombSummonRequirment)
             {
                 Instantiate(bombPrefab, currentGemPosition, Quaternion.identity);
             }
@@ -155,4 +169,30 @@ public class GameLogic : MonoBehaviour
             gemsToRemove.Add(gemToAdd);
         }
     }
+
+    public void AddScore(int score) 
+    {
+        this.score += score;
+        scoreText.text = this.score.ToString();
+        gameOverScoreText.text = this.score.ToString();
+        if(this.score > 20000)
+        {
+            scoreText.color = Color.yellow;
+            gameOverScoreText.color = Color.yellow;
+        }
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    void EndGame()
+    {
+        end = true;
+        Time.timeScale = 0.0f;
+        gameOverMenu.SetActive(true);
+    }
+
+
 }

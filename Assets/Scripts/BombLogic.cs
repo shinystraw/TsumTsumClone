@@ -7,11 +7,13 @@ public class BombLogic : MonoBehaviour
 {
     [SerializeField] private float radius;
     [SerializeField] private LayerMask layer;
+    GameLogic gameLogic;
     BallGenerator spawner;
     bool exploded = false;
 
     private void Start()
     {
+        gameLogic = GameObject.FindGameObjectWithTag("Logic").GetComponent<GameLogic>();
         spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BallGenerator>();
     }
 
@@ -35,14 +37,16 @@ public class BombLogic : MonoBehaviour
             }
             Debug.Log(hit.Length);
 
-            if (exploded)
+            gameLogic.AddScore(hit.Length * 300);
+            
+            if (exploded && hit.Length > 1)
             {
                 Debug.Log("HI?");
-                spawner.GenerateGems(hit.Length - 1);
+                spawner.GenerateGems(hit.Length - 2);
             }
-            else
-            {
-                spawner.GenerateGems(hit.Length);
+            else if(hit.Length > 0)
+            { 
+                spawner.GenerateGems(hit.Length - 1);
             }
 
             Destroy(this.gameObject);

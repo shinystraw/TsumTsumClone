@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 8941800128248198973}
   m_Layer: 3
   m_Name: Gem
-  m_TagString: Untagged
+  m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -222,6 +222,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  connectable: 0
   listcount: 0
   radius: 0

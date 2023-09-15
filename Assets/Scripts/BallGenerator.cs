@@ -21,7 +21,7 @@ public class BallGenerator : MonoBehaviour
     {
         for(int i = 0; i < spawnCount; i++)
         {
-            Vector2 spawnPos = new Vector2(transform.position.x + Random.Range(-1f, 1f), 8) ;
+            Vector2 spawnPos = new Vector2(transform.position.x + Random.Range(-1f, 1f), 6.5f) ;
             GameObject gem = Instantiate(gemPrefab, spawnPos, Quaternion.identity);
             int id = Random.Range(0, gemSprites.Length);
 
